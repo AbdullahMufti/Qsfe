@@ -29,13 +29,13 @@ export default function Question({ data }) {
           name="description"
           content={`${HtmlToPlain(LoadedQuestion.question[0])}`}
         />
-        <meta itemprop="name" content={`${LoadedQuestion.title}`} />
+        <meta itemProp="name" content={`${LoadedQuestion.title}`} />
         <meta
-          itemprop="description"
+          itemProp="description"
           content={`${HtmlToPlain(LoadedQuestion.question[0])}`}
         />
         <meta
-          itemprop="image"
+          itemProp="image"
           content={`https://al-mawrid.net/FileUploadSys/uploads/sawalojawab.jpeg`}
         />
         <meta
