@@ -76,7 +76,7 @@ export default function Question({ data }) {
         } rounded-md shadow-md  p-2 mt-10 bg-gray-300`}
       >
         <div
-          className="flex"
+          className="flex flex-wrap"
           style={{
             direction: `${
               LoadedQuestion.question_lang === "ur" ? "rtl" : "ltr"
@@ -85,7 +85,7 @@ export default function Question({ data }) {
         >
           <div className="w-full md:w-2/3 p-6">
             <div className={`QuestionTitle ${GetStyle(LoadedQuestion.title)}`}>
-              <p className="text-4xl leading-10">{LoadedQuestion.title}</p>
+              <p className="text-4xl leading-loose">{LoadedQuestion.title}</p>
               <p className="text-md text-right">
                 {GetDate(LoadedQuestion.entry_date)}
               </p>
