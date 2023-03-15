@@ -4,12 +4,12 @@ import { useState } from "react";
 export default function SubMenu({ subtitle, tabIndex, subsublist }) {
   const [show, setShow] = useState(false);
   return (
-    <div tabIndex={tabIndex}>
-      <a className="" onClick={() => setShow(!show)}>
+    <li tabIndex={tabIndex}>
+      <a onClick={() => setShow(!show)} className="flex">
         {subtitle}
 
         <svg
-          className="fill-current"
+          className="fill-current inline"
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"
@@ -30,6 +30,6 @@ export default function SubMenu({ subtitle, tabIndex, subsublist }) {
           ))}
         </ul>
       )}
-    </div>
+    </li>
   );
 }

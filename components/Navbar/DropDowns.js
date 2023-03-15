@@ -7,7 +7,7 @@ export default function DropDowns({ tabIndex, title, sublist }) {
       <a className="flex">
         {title}
         <svg
-          className="fill-current hidden lg:flex"
+          className="fill-current hidden lg:flex "
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"
@@ -17,7 +17,7 @@ export default function DropDowns({ tabIndex, title, sublist }) {
         </svg>
 
         <svg
-          className="fill-current lg:hidden"
+          className="fill-current lg:hidden inline"
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"

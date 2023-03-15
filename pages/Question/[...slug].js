@@ -73,7 +73,7 @@ export default function Question({ data }) {
       <main
         className={`${
           LoadedQuestion.question_lang === "ur" && noto.className
-        } rounded-md shadow-md  p-2 mt-10 bg-gray-300`}
+        } rounded-md shadow-md  p-2 mt-10 bg-gray-100`}
       >
         <div
           className="flex flex-wrap"
@@ -158,23 +158,12 @@ export default function Question({ data }) {
             <p>
               <b>Tags</b>
             </p>
-            <p>
-              {LoadedQuestion.tags.map((tag, index) =>
-                index === 0 ? (
-                  <a
-                    key={index}
-                    href="/Questions/SearchByTags"
-                    className="flex flex-row flex-wrap"
-                  >
-                    <span className="bubble ">{tag}</span>
-                  </a>
-                ) : (
-                  <a key={index} href="/Questions/SearchByTags">
-                    &nbsp;&nbsp;
-                    <span className="bubble">{tag}</span>
-                  </a>
-                )
-              )}
+            <p className="flex flex-wrap">
+              {LoadedQuestion.tags.map((tag, index) => (
+                <span key={index} className="bubble">
+                  &nbsp;{tag}
+                </span>
+              ))}
             </p>
             <div className="RelatedSection">
               {LoadedQuestion.relatedQs.length > 0 && (

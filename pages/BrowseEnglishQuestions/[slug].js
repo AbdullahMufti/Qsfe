@@ -58,7 +58,7 @@ export default function BrowseEnglishQuestions({ EnQuestions, SKIP }) {
           <div>
             {EnQuestions &&
               EnQuestions.question.map((Question, index) => (
-                <div className=" bg-gray-300 m-3 p-3 rounded-lg " key={index}>
+                <div className=" bg-gray-100 m-3 p-3 rounded-lg " key={index}>
                   <div className="text-right text-bold">
                     {GetDate(Question.entry_date)}
                   </div>
