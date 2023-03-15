@@ -5,11 +5,6 @@ import HTMLReactParser from "html-react-parser";
 import { Noto_Nastaliq_Urdu } from "next/font/google";
 import { useRouter } from "next/router";
 
-const noto = Noto_Nastaliq_Urdu({
-  weight: "400",
-  subsets: ["arabic"],
-});
-
 export default function QuestionCard({ UrQuestions, SKIP }) {
   const Next = parseInt(SKIP) + 1;
   const Prev = parseInt(SKIP) - 1;
@@ -29,10 +24,7 @@ export default function QuestionCard({ UrQuestions, SKIP }) {
   return (
     <div>
       {UrQuestions.question.map((Question, index) => (
-        <div
-          className={`${noto.className} bg-gray-300 m-3 p-3 rounded-lg`}
-          key={index}
-        >
+        <div className={` bg-gray-300 m-3 p-3 rounded-lg`} key={index}>
           <div className="text-bold">{GetDate(Question.entry_date)}</div>
           <div className="text-right">
             <a
