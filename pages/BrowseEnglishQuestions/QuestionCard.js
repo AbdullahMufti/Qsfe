@@ -1,5 +1,5 @@
 "use client";
-import { GetDateHexa, GetDate } from "../../lib/univ-functions";
+import { GetDateHexa, GetDate, StyleRemover } from "../../lib/univ-functions";
 import { Link } from "next/link";
 import HTMLReactParser from "html-react-parser";
 import { useRouter } from "next/router";
@@ -35,7 +35,9 @@ export default function Questioncard({ EnQuestions, SKIP }) {
               >
                 <h2 className="text-2xl font-bold"> {Question.title}</h2>
                 <div className="text-md p-3 inline-block">
-                  {HTMLReactParser(Question.question[0].slice(0, 300))}
+                  {HTMLReactParser(
+                    StyleRemover(Question.question[0].slice(0, 300))
+                  )}
                 </div>
               </a>
             </div>
@@ -58,7 +60,7 @@ export default function Questioncard({ EnQuestions, SKIP }) {
           </span>
           &nbsp; of&nbsp;
           <span className="font-semibold text-gray-900 dark:text-white">
-            {EnQuestions.totalQuestion}
+            {EnQuestions && EnQuestions.totalQuestion}
           </span>
           &nbsp; Entries
         </span>
@@ -75,7 +77,7 @@ export default function Questioncard({ EnQuestions, SKIP }) {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
                 clip-rule="evenodd"
               ></path>
@@ -95,7 +97,7 @@ export default function Questioncard({ EnQuestions, SKIP }) {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
                 clip-rule="evenodd"
               ></path>
