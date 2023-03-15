@@ -3,6 +3,12 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Navbar from "@/components/Navbar/Navbar";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  weight: "300",
+  subsets: ["latin"],
+});
 
 export default function Home() {
   return (
