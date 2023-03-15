@@ -6,6 +6,7 @@ import {
   GetStyle,
   GetDate,
   isUrdu,
+  StyleRemover,
 } from "@/lib/univ-functions-server";
 
 import SendRequest from "@/lib/sendRequest";
@@ -100,7 +101,9 @@ export default function Question({ data }) {
               <br />
               <div className="leading-10">
                 {LoadedQuestion.question[0] !== "" &&
-                  HTMLReactParser(`${LoadedQuestion.question[0]}`)}
+                  HTMLReactParser(
+                    `${StyleRemover(LoadedQuestion.question[0])}`
+                  )}
                 {LoadedQuestion.asker_name > 0 && (
                   <div>
                     {LoadedQuestion.question_lang === "ur" ? (
@@ -138,7 +141,10 @@ export default function Question({ data }) {
                   className="rtlStyle UrduMedium"
                   style={{ fontWeight: "100" }}
                 >
-                  مسئول :{HTMLReactParser(`${LoadedQuestion.answerer_name[0]}`)}
+                  مسئول :
+                  {HTMLReactParser(
+                    `${StyleRemover(LoadedQuestion.answerer_name[0])}`
+                  )}
                 </div>
               ) : (
                 <div className="ATitle">

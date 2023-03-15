@@ -36,7 +36,9 @@ export default function BrowseUrduQuestions({ UrQuestions, SKIP }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        <QuestionCard UrQuestions={UrQuestions} SKIP={SKIP} />
+        {UrQuestions && UrQuestions.question.length > 0 && (
+          <QuestionCard UrQuestions={UrQuestions} SKIP={SKIP} />
+        )}
       </main>
     </>
   );

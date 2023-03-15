@@ -36,7 +36,9 @@ export default function BrowseEnglishQuestions({ EnQuestions, SKIP }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        <Questioncard EnQuestions={EnQuestions} SKIP={SKIP} />
+        {EnQuestions && EnQuestions.question.length > 0 && (
+          <Questioncard EnQuestions={EnQuestions} SKIP={SKIP} />
+        )}
       </main>
     </>
   );
