@@ -1,11 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 import avatar from "../../public/images/avatar.gif";
 
 export default function AuthSection({ Component, pageProps }) {
   return (
     <div className="flex-1 justify-end ">
-      <div className="dropdown dropdown-end">Login</div>
       <div className="dropdown dropdown-end">
+        <Link href="https://al-mawrid.org/">Login</Link>
+      </div>
+      {/*      <div className="dropdown dropdown-end">
         <label tabIndex={4} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
             <Image src={avatar} height="70" width="70" alt="gif image" />
@@ -20,6 +23,7 @@ export default function AuthSection({ Component, pageProps }) {
           </li>
         </ul>
       </div>
+  */}{" "}
     </div>
   );
 }

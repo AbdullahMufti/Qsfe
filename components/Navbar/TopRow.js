@@ -8,12 +8,12 @@ export default function TopRow() {
         tabIndex={1}
         title="About"
         sublist={[
-          ["About Us", "/AboutUs"],
-          ["Message to Humanity", "/MessagetoHumanity"],
-          ["Fellows", "/Fellows"],
-          ["Associate Fellows", "/AssociateFellows"],
-          ["Assistant Fellows", "/AssistantFellows"],
-          ["Contact Us", "/ContactUs"],
+          ["About Us", "https://al-mawrid.org/TheOrganisation"],
+          ["Message to Humanity", "https://al-mawrid.org/OurMessage"],
+          ["Fellows", "https://al-mawrid.org/Fellows"],
+          ["Associate Fellows", "https://al-mawrid.org/Associate"],
+          ["Assistant Fellows", "https://al-mawrid.org/Assistant"],
+          ["Contact Us", "https://al-mawrid.org/ContactUs"],
         ]}
       />
       <DropDowns
@@ -21,7 +21,7 @@ export default function TopRow() {
         title="Read"
         sublist={[
           ["Quran", "https://javedahmedghamidi.org/#!/quran-home"],
-          ["Books", "/Books"],
+          ["Books", "https://al-mawrid.org/Books"],
           ["Blogs", "https://javedahmedghamidi.org/#!/blog"],
           [
             ["Questions"],
@@ -29,7 +29,7 @@ export default function TopRow() {
             [
               ["اردو سوالات", "/BrowseUrduQuestions/1"],
               ["English Questions", "/BrowseEnglishQuestions/1"],
-              ["Browse Question", "/SearchQuestion"],
+              ["Search All Question", "/SearchQuestion"],
             ],
           ],
           [
@@ -51,10 +51,10 @@ export default function TopRow() {
         ]}
       />
       <li>
-        <Link href="AlMawridSociety">Al-Mawrid Society</Link>
+        <Link href="https://al-mawrid.org/AMSociety">Al-Mawrid Society</Link>
       </li>
       <li>
-        <Link href="AskQuestion">Ask a Question</Link>
+        <Link href="https://al-mawrid.org/auth">Ask a Question</Link>
       </li>
       <li></li>
     </>

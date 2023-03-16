@@ -20,7 +20,7 @@ export async function getServerSideProps({ params }) {
   let LIMIT = 10;
   let SKIP = 10 * (parseInt(slug) - 1);
 
-  const UrQuestions = await SendRequest(
+  const Questions = await SendRequest(
     `${process.env.NEXT_PUBLIC_LOCAL_URL}api/query/BrowseUrduQuestions?Limit=${LIMIT}&Skip=${SKIP}`,
     "GET",
     null,
@@ -29,10 +29,10 @@ export async function getServerSideProps({ params }) {
     }
   );
 
-  return { props: { UrQuestions, SKIP } };
+  return { props: { Questions, SKIP } };
 }
 
-export default function BrowseUrduQuestions({ UrQuestions, SKIP }) {
+export default function BrowseUrduQuestions({ Questions, SKIP }) {
   const Next = parseInt(SKIP) + 1;
   const Prev = parseInt(SKIP) - 1;
 
@@ -56,9 +56,9 @@ export default function BrowseUrduQuestions({ UrQuestions, SKIP }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        {UrQuestions && UrQuestions.question.length > 0 && (
+        {Questions && Questions.question && Questions.question.length > 0 && (
           <div>
-            {UrQuestions.question.map((Question, index) => (
+            {Questions.question.map((Question, index) => (
               <div className="bg-gray-100 m-3 p-3 rounded-lg" key={index}>
                 <div className="text-bold">{GetDate(Question.entry_date)}</div>
                 <div className="text-right">
@@ -95,7 +95,7 @@ export default function BrowseUrduQuestions({ UrQuestions, SKIP }) {
                 </span>
                 &nbsp; of&nbsp;
                 <span className="font-semibold text-gray-900 dark:text-white">
-                  {UrQuestions && UrQuestions.totalQuestion}
+                  {Questions && Questions.totalQuestion}
                 </span>
                 &nbsp; Entries
               </span>

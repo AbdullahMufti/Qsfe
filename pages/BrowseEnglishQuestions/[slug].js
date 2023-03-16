@@ -18,7 +18,7 @@ export async function getServerSideProps({ params }) {
   let LIMIT = 10;
   let SKIP = 10 * (parseInt(params.slug) - 1);
 
-  const EnQuestions = await SendRequest(
+  const Questions = await SendRequest(
     `${process.env.NEXT_PUBLIC_LOCAL_URL}api/query/BrowseEnglishQuestions?Limit=${LIMIT}&Skip=${SKIP}`,
     "GET",
     null,
@@ -27,10 +27,10 @@ export async function getServerSideProps({ params }) {
     }
   );
 
-  return { props: { EnQuestions, SKIP } };
+  return { props: { Questions, SKIP } };
 }
 
-export default function BrowseEnglishQuestions({ EnQuestions, SKIP }) {
+export default function BrowseEnglishQuestions({ Questions, SKIP }) {
   const Next = parseInt(SKIP) + 1;
   const Prev = parseInt(SKIP) - 1;
 
@@ -54,10 +54,10 @@ export default function BrowseEnglishQuestions({ EnQuestions, SKIP }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        {EnQuestions && EnQuestions.question.length > 0 && (
+        {Questions && Questions.question && Questions.question.length > 0 && (
           <div>
-            {EnQuestions &&
-              EnQuestions.question.map((Question, index) => (
+            {Questions &&
+              Questions.question.map((Question, index) => (
                 <div className=" bg-gray-100 m-3 p-3 rounded-lg " key={index}>
                   <div className="text-right text-bold">
                     {GetDate(Question.entry_date)}
@@ -98,7 +98,7 @@ export default function BrowseEnglishQuestions({ EnQuestions, SKIP }) {
                 </span>
                 &nbsp; of&nbsp;
                 <span className="font-semibold text-gray-900 dark:text-white">
-                  {EnQuestions && EnQuestions.totalQuestion}
+                  {Questions && Questions.totalQuestion}
                 </span>
                 &nbsp; Entries
               </span>

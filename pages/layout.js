@@ -14,7 +14,9 @@ const roboto = Roboto({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`  ${roboto.className}  max-w-screen-lg mx-auto px-2 `}>
+      <body
+        className={`  ${roboto.className}  max-w-screen-lg mx-auto px-2 min-h-screen`}
+      >
         <MainNavbar />
         {children}
       </body>

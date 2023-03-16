@@ -2,11 +2,11 @@ import TopRow from "./TopRow";
 import { Image } from "next/image";
 import AuthSection from "./AuthSection";
 import Link from "next/link";
-import almawridblack from "../../public/almawridblack.png";
+import almawrid from "@/public/almawrid.png";
 export default function Navbar() {
   return (
-    <div className="navbar bg-green-700">
-      <div className="navbar-start">
+    <div className="navbar bgalum text-white">
+      <div className="flex-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -33,7 +33,7 @@ export default function Navbar() {
         </div>
         <Link className="btn btn-ghost normal-case text-xl" href="/">
           <img
-            src="/almawridblack.png"
+            src="images/almawrid.png"
             height="50"
             width="200"
             alt="Al-Mawrid"

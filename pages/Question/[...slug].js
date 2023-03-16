@@ -10,6 +10,7 @@ import {
 } from "@/lib/univ-functions-server";
 
 import SendRequest from "@/lib/sendRequest";
+import Link from "next/link";
 const noto = Noto_Nastaliq_Urdu({
   weight: "400",
   subsets: ["arabic"],
@@ -99,7 +100,7 @@ export default function Question({ data }) {
                 <h3 className="text-2xl">Question :</h3>
               )}
               <br />
-              <div className="leading-10">
+              <div className="leading-10 text-justify">
                 {LoadedQuestion.question[0] !== "" &&
                   HTMLReactParser(
                     `${StyleRemover(LoadedQuestion.question[0])}`
@@ -119,9 +120,9 @@ export default function Question({ data }) {
               <hr />
 
               {LoadedQuestion.question_lang === "ur" ? (
-                <h3 className="rtlStyle UrduMedium">جواب :</h3>
+                <h3 className="text-2xl text-right float-right">جواب :</h3>
               ) : (
-                <h3 className="ATitle">Answer :</h3>
+                <h3 className="text-4xl">Answer :</h3>
               )}
               <br />
               <div
@@ -130,17 +131,14 @@ export default function Question({ data }) {
               LoadedQuestion.question_lang === "ur"
                 ? "rtlStyle UrduMedium"
                 : "ltrStyle"
-            } leading-10`}
+            } leading-10 text-justify `}
               >
                 {!!LoadedQuestion.answer[0] &&
                   HTMLReactParser(`${LoadedQuestion.answer[0]}`)}
               </div>
 
               {LoadedQuestion.question_lang === "ur" ? (
-                <div
-                  className="rtlStyle UrduMedium"
-                  style={{ fontWeight: "100" }}
-                >
+                <div className="text-justify" style={{ fontWeight: "100" }}>
                   مسئول :
                   {HTMLReactParser(
                     `${StyleRemover(LoadedQuestion.answerer_name[0])}`
@@ -158,13 +156,13 @@ export default function Question({ data }) {
             <p>
               <b>Tags</b>
             </p>
-            <p className="flex flex-wrap">
+            <div className="flex flex-wrap">
               {LoadedQuestion.tags.map((tag, index) => (
-                <span key={index} className="bubble">
-                  &nbsp;{tag}
-                </span>
+                <Link key={index} href={`/SearchQuestionTag/${tag}`}>
+                  <span className="bubble">&nbsp;{tag}</span>
+                </Link>
               ))}
-            </p>
+            </div>
             <div className="RelatedSection">
               {LoadedQuestion.relatedQs.length > 0 && (
                 <>
